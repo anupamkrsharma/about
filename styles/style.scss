@@ -1,0 +1,172 @@
+// font-family: 'Goldman', cursive;
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Rubik Mono One', sans-serif;
+
+$navHeader: 1.5rem;
+$commonFontFamily: 'Poppins',sans-serif;
+$contactFontFamily: 'Goldman',cursive;
+$boldFont:'Rubik Mono One',sans-serif;
+$display-1: 5rem;
+$display-6:3rem;
+$textColor: #fff;
+
+
+
+@mixin bg() {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('../assets/me2.png');
+    background-repeat: no-repeat;
+    background-position: 45rem 50%;
+    background-size: 55%;
+  
+}
+
+@mixin hr($widthY) {
+    margin-top:1rem;
+    width: $widthY;
+    height: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $commonFontFamily;
+    color: $textColor;
+}
+
+
+header {
+    @include bg();
+
+    nav {
+        padding: 2rem 5rem;
+        //background-color: #1a1a1a;
+
+        p {
+            font-size: $navHeader;
+            
+            font-family: $boldFont;
+        }
+    }
+
+    .container {
+        display: flex;
+        padding: 4rem 5%;
+                
+        //border: 2px solid #aaa;
+
+        .line-section {
+           //border: 2px solid #aaa;
+           position: relative;
+            margin-right: auto ;
+            .line {
+                width: 1px;
+                height: 350px;
+                background-color: #fff;
+                margin: 1rem auto;
+            }
+
+            p {
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                margin: auto;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
+                background-color: #fff;
+                border-radius: 50%;
+                left: -3px;
+                bottom: 2rem;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                width: 2.5rem;
+                height: 2.5rem;
+                border: 2px solid #aaa;
+                border-radius: 50%;
+                left: -9px;
+                bottom: 1rem;
+            }
+        }
+
+        .header-text{
+            margin-right:50%;
+            padding: 5%;
+            //border: 2px solid #aaa;
+            .display-6{
+                font-size: $display-6;
+                margin-bottom: 0;
+            }
+            .display-1{
+                font-size: $display-1;
+                margin-top: 0;
+            }
+            .hr-1{
+                @include hr(auto)
+            }
+            .hr-2{
+                @include hr(60%)
+            }
+            .hr-3{
+                @include hr(40%)
+            }
+        }
+
+        .header-img{
+            //border: 2px solid #aaa;
+           
+            img{
+                
+                width: 41rem;
+            }
+        }
+    }
+
+    .foot{
+        display: flex;
+        //background-color: #1a1a1a;
+        margin: auto;
+        padding: 0 5rem;
+        //border: 2px solid #aaa;
+        .contact{
+          // border: 2px solid #aaa;
+            .lead{
+              font-family: $commonFontFamily; 
+              font-size: 1rem; 
+            }
+        }
+
+        .contact-div{
+            margin-left: auto;
+            //border: 2px solid #aaa;
+            width: auto;
+            .contact-me{
+                font-family: $boldFont;
+                margin-top: 0;
+                font-size: 1.2em; 
+            }
+            .icon-tray{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .hr-3{
+                    margin: auto;
+                    width: 20%;
+                    height: 5px;
+                    background-color: #fff;
+                    border-radius: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+header {
+  height: 100vh;
+  background-color: #000;
+  background-image: url("../assets/me2.png");
+  background-repeat: no-repeat;
+  background-position: 45rem 50%;
+  background-size: 55%;
+}
+
+header nav {
+  padding: 2rem 5rem;
+}
+
+header nav p {
+  font-size: 1.5rem;
+  font-family: "Rubik Mono One", sans-serif;
+}
+
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4rem 5%;
+}
+
+header .container .line-section {
+  position: relative;
+  margin-right: auto;
+}
+
+header .container .line-section .line {
+  width: 1px;
+  height: 350px;
+  background-color: #fff;
+  margin: 1rem auto;
+}
+
+header .container .line-section p {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: auto;
+}
+
+header .container .line-section::after {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  border-radius: 50%;
+  left: -3px;
+  bottom: 2rem;
+}
+
+header .container .line-section::before {
+  content: '';
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  left: -9px;
+  bottom: 1rem;
+}
+
+header .container .header-text {
+  margin-right: 50%;
+  padding: 5%;
+}
+
+header .container .header-text .display-6 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+header .container .header-text .display-1 {
+  font-size: 5rem;
+  margin-top: 0;
+}
+
+header .container .header-text .hr-1 {
+  margin-top: 1rem;
+  width: auto;
+  height: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+header .container .header-text .hr-2 {
+  margin-top: 1rem;
+  width: 60%;
+  height: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+header .container .header-text .hr-3 {
+  margin-top: 1rem;
+  width: 40%;
+  height: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+header .container .header-img img {
+  width: 41rem;
+}
+
+header .foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  padding: 0 5rem;
+}
+
+header .foot .contact .lead {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+header .foot .contact-div {
+  margin-left: auto;
+  width: auto;
+}
+
+header .foot .contact-div .contact-me {
+  font-family: "Rubik Mono One", sans-serif;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+header .foot .contact-div .icon-tray {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .foot .contact-div .icon-tray .hr-3 {
+  margin: auto;
+  width: 20%;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+/*# sourceMappingURL=style.css.map */
