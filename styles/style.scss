@@ -8,22 +8,26 @@ $contactFontFamily: 'Goldman',cursive;
 $boldFont:'Rubik Mono One',sans-serif;
 $display-1: 5rem;
 $display-6:3rem;
+$display-1-size: 4.5rem;
+$display-6-size: 2.5rem;
 $textColor: #fff;
 
 
 
-@mixin bg() {
-    height: 100vh;
-    background-color: #000;
+@mixin bg($position-X, $position-Y, $size) {
+    height: 100%;
+    max-height: 720px;
     background-image: url('../assets/me2.png');
     background-repeat: no-repeat;
-    background-position: 45rem 50%;
-    background-size: 55%;
-  
+    //background-position: 95% 50%;
+    //background-size: 45rem;
+    background-position: $position-X $position-Y;
+    background-size: $size;
+    background-color: #000;
 }
 
 @mixin hr($widthY) {
-    margin-top:1rem;
+    margin-top: 1rem;
     width: $widthY;
     height: 1rem;
     background-color: #fff;
@@ -36,137 +40,348 @@ $textColor: #fff;
 body {
     margin: 0;
     padding: 0;
+    background-color: #aaa;
     font-family: $commonFontFamily;
     color: $textColor;
+    //text-shadow: 2px 2px 5px #56cbf2;
 }
 
 
 header {
-    @include bg();
+    @include bg(95%, 100%, 45rem);
+    position: relative;
 
     nav {
-        padding: 2rem 5rem;
+        padding: 1% 5%;
         //background-color: #1a1a1a;
 
-        p {
+        .nav-name {
             font-size: $navHeader;
-            
             font-family: $boldFont;
         }
     }
 
     .container {
         display: flex;
-        padding: 4rem 5%;
-                
+        padding: 1% 5%;
+
+
         //border: 2px solid #aaa;
 
         .line-section {
-           //border: 2px solid #aaa;
-           position: relative;
-            margin-right: auto ;
+            //border: 2px solid #aaa;
+            position: relative;
+            margin-right: 5%;
+
             .line {
-                width: 1px;
-                height: 350px;
-                background-color: #fff;
+                width: 0.5px;
+                height: 70%;
+                background-color: #ffffff;
                 margin: 1rem auto;
+
             }
 
-            p {
+            #year {
                 writing-mode: vertical-rl;
                 text-orientation: upright;
-                margin: auto;
+                margin: 0.5rem auto;
             }
-            &::after{
+
+            &::after {
                 content: '';
                 position: absolute;
-                width: 2rem;
-                height: 2rem;
+                width: 1.5rem;
+                height: 1.5rem;
                 background-color: #fff;
                 border-radius: 50%;
-                left: -3px;
-                bottom: 2rem;
+                left: 0;
+                bottom: auto;
+                box-shadow: 1px 1px 50px #56cbf2;
             }
-            &::before{
-                content: '';
-                position: absolute;
-                width: 2.5rem;
-                height: 2.5rem;
-                border: 2px solid #aaa;
-                border-radius: 50%;
-                left: -9px;
-                bottom: 1rem;
-            }
+
+            // &::before {
+            //     content: '';
+            //     position: absolute;
+            //     width: 2.5rem;
+            //     height: 2.5rem;
+            //     border: 0.5px solid #a1a1a1;
+            //     border-radius: 50%;
+            //     left: -9px;
+            //     bottom: -40px;
+            // }
         }
 
-        .header-text{
-            margin-right:50%;
-            padding: 5%;
-            //border: 2px solid #aaa;
-            .display-6{
+        .header-text {
+            //margin-right: 40%;
+            padding: 2rem;
+
+            //border: 2px solid #313131;
+            .display-6 {
                 font-size: $display-6;
                 margin-bottom: 0;
             }
-            .display-1{
+
+            .display-1 {
                 font-size: $display-1;
                 margin-top: 0;
+                text-shadow: 2px 2px 100px #56cbf2;
+                animation: blink 1s linear infinite;
             }
-            .hr-1{
+
+            .hr-1 {
                 @include hr(auto)
             }
-            .hr-2{
+
+            .hr-2 {
                 @include hr(60%)
             }
-            .hr-3{
-                @include hr(40%)
-            }
-        }
 
-        .header-img{
-            //border: 2px solid #aaa;
-           
-            img{
-                
-                width: 41rem;
+            .hr-3 {
+                @include hr(40%)
             }
         }
     }
 
-    .foot{
+    .foot {
         display: flex;
+        justify-content: space-between;
+        padding: 1% 5%;
+        //margin-top: auto;
+        //border: 0.5px solid #aaa;
         //background-color: #1a1a1a;
-        margin: auto;
-        padding: 0 5rem;
-        //border: 2px solid #aaa;
-        .contact{
-          // border: 2px solid #aaa;
-            .lead{
-              font-family: $commonFontFamily; 
-              font-size: 1rem; 
+
+        .contact {
+            //border: 0.5px solid #aaa;
+
+            .lead {
+                font-family: $commonFontFamily;
+                font-size: 1rem;
+                margin-top: 2rem;
+                margin-bottom: auto;
             }
         }
 
-        .contact-div{
-            margin-left: auto;
-            //border: 2px solid #aaa;
+        .contact-div {
             width: auto;
-            .contact-me{
+            //border: 2px solid #aaa;
+
+            .contact-me {
                 font-family: $boldFont;
-                margin-top: 0;
-                font-size: 1.2em; 
+                //margin-top: 0;
+                font-size: 1.2em;
+                text-align: center;
             }
-            .icon-tray{
+
+            .icon-tray {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                .hr-3{
+
+                .hr-3 {
                     margin: auto;
-                    width: 20%;
+                    width: 5rem;
                     height: 5px;
                     background-color: #fff;
                     border-radius: 1rem;
                 }
+
+                .button {
+                    margin: 0 4%;
+                    padding: 0.5rem 2.5rem;
+                    //border: 1px solid #919191;
+                    border-radius: 2rem;
+                    box-shadow: 1px 1px 150px #56cbf2;
+                    background-image: linear-gradient(to right, #56cbf2 0%, #2f81ed 100%);
+
+                    .a-tag {
+                        text-decoration: none;
+                        color: $textColor;
+                    }
+                }
+
+                .button:hover {
+                    transition: 0.5s all ease-in-out;
+                    box-shadow: 10px -10px 200px #56cbf2;
+                    transform: scale(1.05);
+                }
+
+                .button:active {
+                    transition: 0.5s all ease-in-out;
+                    transform: scale(0.8);
+                }
+
             }
+        }
+    }
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+
+@media screen and (max-width: 1260px) {
+
+    header {
+        @include bg(100%, 100%, 70%);
+
+        .container {
+            padding: 4% 5%;
+
+            .header-text {
+                //border: 2px solid #aaa;
+                padding: auto;
+
+                .display-6 {
+                    font-size: $display-6-size;
+                }
+
+                .display-1 {
+                    font-size: $display-1-size;
+                }
+
+                .hr-1 {
+                    @include hr(auto)
+                }
+
+                .hr-2 {
+                    @include hr(50%)
+                }
+
+                .hr-3 {
+                    @include hr(30%)
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 720px) {
+    header {
+
+        // @include bg(100%, 100%, 35rem);
+        nav {
+            padding: auto;
+            //background-color: #1a1a1a;
+
+            .nav-name {
+                font-size: 1.2rem;
+            }
+        }
+
+        .container {
+            padding: 1% 5%;
+
+
+            .header-text {
+                padding: 10% 2% 20% 2%;
+
+                //border: 2px solid #aaa;
+                .display-6 {
+                    font-size: 5vw;
+                }
+
+                .display-1 {
+                    font-size: 10vw;
+                }
+
+                .hr-1 {
+                    @include hr(auto)
+                }
+
+                .hr-2 {
+                    @include hr(40%)
+                }
+
+                .hr-3 {
+                    @include hr(20%)
+                }
+            }
+        }
+
+        .foot {
+            flex-direction: column;
+
+            //padding: 5%;
+            //margin-top:2rem ;
+            .contact {
+                .lead {
+                    text-align: center;
+                    margin: auto;
+                }
+            }
+
+            .contact-div {
+
+                //margin-top: 2rem;
+                .contact-me {
+                    text-align: center;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        @include bg(8rem, 100%, 35rem);
+        height: 100vh;
+
+        nav {
+            padding: 4% 8%;
+            //background-color: #1a1a1a;
+
+            .nav-name {
+                font-size: 1rem;
+            }
+        }
+
+        .container {
+            padding: 6% 8%;
+
+            .header-text {
+                padding: 20% 2%;
+            }
+        }
+
+        .foot {
+            padding: 5%;
+
+            //margin-top:2rem ;
+            .contact {
+                .lead {
+                    font-size: 0.8rem;
+                    padding-top: 5%;
+                    text-align: center;
+                    margin: 2rem auto auto auto;
+                }
+            }
+
+            .contact-div {
+
+                //margin-top: 5%;
+                .contact-me {
+                    text-align: center;
+                }
+            }
+
         }
     }
 }
