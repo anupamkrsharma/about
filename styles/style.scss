@@ -25,6 +25,7 @@ $textColor: #fff;
     background-color: #000;
     //filter: drop-shadow(0 -6px 4px rgb(160, 0, 210));
     overflow: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
  @mixin hr($widthY) {
@@ -39,7 +40,9 @@ $textColor: #fff;
 }
 
 
-
+*{
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
